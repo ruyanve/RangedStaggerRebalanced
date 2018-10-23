@@ -17,6 +17,8 @@
                             <stoppingPowerFactor>1.5</stoppingPowerFactor>
                         </li>
                     </value>
+                  </li>
+                  <li Class="PatchOperationAddModExtension">
                     <xpath>*/ThingDef[defName="Bullet_BeanBag"]</xpath>
                     <value>
                         <li Class="RangedStaggerRebalanced.StoppingPowerExtension">

@@ -1,0 +1,12 @@
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Weapon Tech</li>
+        </mods>
+        <match Class="PatchOperationRemove">
+            <xpath>*/ThingDef[defName="Bullet_300Win" or defName="Bullet_22LR" or defName="Bullet_44Ball" or defName="Bullet_BeanBag" or defName="Bullet_762x54mmR" or defName="Bullet_762x51mmJ" or defName="Bullet_PrototypeRifle" or defName="Bullet_AntiMateriel"]/projectile/stoppingPower</xpath>
+        </match>
+    </Operation>
+
+</Patch>

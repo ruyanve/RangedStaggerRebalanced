@@ -4,17 +4,28 @@
         <mods>
             <li>Weapon Tech</li>
         </mods>
-        <match Class="PatchOperationRemove">
-            <xpath>*/ThingDef[defName="Bullet_300Win" or defName="Bullet_22LR" or defName="Bullet_44Ball" or defName="Bullet_BeanBag" or defName="Bullet_762x54mmR" or defName="Bullet_762x51mmJ" or defName="Bullet_PrototypeRifle" or defName="Bullet_AntiMateriel"]/projectile/stoppingPower</xpath>
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+                <li Class="PatchOperationRemove">
+                    <xpath>*/ThingDef[defName="Bullet_300Win" or defName="Bullet_22LR" or defName="Bullet_44Ball" or defName="Bullet_BeanBag" or defName="Bullet_762x54mmR" or defName="Bullet_762x51mmJ" or defName="Bullet_PrototypeRifle" or defName="Bullet_AntiMateriel"]/projectile/stoppingPower</xpath>
+                </li>
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>*/ThingDef[defName="Bullet_AntiMateriel"]</xpath>
+                    <value>
+                        <li Class="RangedStaggerRebalanced.StoppingPowerExtension">
+                            <stoppingPowerFactor>1.5</stoppingPowerFactor>
+                        </li>
+                    </value>
+                    <xpath>*/ThingDef[defName="Bullet_BeanBag"]</xpath>
+                    <value>
+                        <li Class="RangedStaggerRebalanced.StoppingPowerExtension">
+                            <stoppingPowerFactor>2</stoppingPowerFactor>
+                        </li>
+                    </value>
+                </li>
+            </operations>
         </match>
-        <li Class="PatchOperationAddModExtension">
-            <xpath>*/ThingDef[defName="Bullet_AntiMateriel"]</xpath>
-            <value>
-              <li Class="RangedStaggerRebalanced.StoppingPowerExtension">
-                <stoppingPowerFactor>1.5</stoppingPowerFactor>
-              </li>
-            </value>
-        </li>
-     </Operation>
+    </Operation>
 
 </Patch>
